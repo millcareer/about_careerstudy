@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>キャリアスタディ - 体育会学生のための就活トレーニングプログラム</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-yellow: #FFC107;
+            --secondary-yellow: #FFD54F;
+            --light-yellow: #FFF8E1;
+            --accent-orange: #FF8C00;
+            --light-orange: #FFE0B2;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-white: #FFFFFF;
+            --bg-light: #FFFEF7;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--secondary-yellow) 100%);
+            color: var(--text-dark);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .hero .subtitle {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
+        .highlight {
+            background: rgba(255, 255, 255, 0.5);
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 65px 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--text-dark);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary-yellow);
+            border-radius: 2px;
+        }
+
+        /* Problem Section */
+        .problem-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .problem-card {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-orange);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .problem-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .problem-stat {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-orange);
+            margin: 10px 0;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            border-top: 3px solid var(--accent-orange);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--light-yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            border: 2px solid var(--primary-yellow);
+        }
+
+        .feature-item h3 {
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        /* Cycle Section - Triangle Layout */
+        .cycle-container {
+            max-width: 620px;
+            margin: 0 auto;
+            position: relative;
+            padding: 30px 20px 40px;
+        }
+
+        .cycle-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 580px;
+            height: 380px;
+            margin: 40px auto 0;
+        }
+
+        .cycle-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 160px;
+            height: 160px;
+            background: var(--primary-yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 25px;
+            box-shadow: 0 6px 20px rgba(255, 193, 7, 0.3);
+            z-index: 10;
+        }
+
+        .cycle-center-text {
+            color: #333;
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        .cycle-step {
+            position: absolute;
+            width: 200px;
+            background: white;
+            padding: 16px 14px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            text-align: left;
+            border: 1px solid rgba(255, 193, 7, 0.2);
+        }
+
+        /* Position each step in a triangle */
+        .cycle-step:nth-child(1) {
+            /* Input - 下中央 */
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .cycle-step:nth-child(2) {
+            /* Practice - 右上 */
+            top: 25px;
+            right: 35px;
+        }
+
+        .cycle-step:nth-child(3) {
+            /* Feedback - 左上 */
+            top: 25px;
+            left: 35px;
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 5px;
+        }
+
+        .step-number {
+            width: 30px;
+            height: 30px;
+            background: var(--accent-orange);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .cycle-step h3 {
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .cycle-step p {
+            font-size: 0.78rem;
+            color: var(--text-light);
+            line-height: 1.5;
+            margin: 0;
+            padding-left: 38px;
+        }
+
+        /* Curved arrows */
+        .cycle-arrows {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .cycle-arrow {
+            position: absolute;
+            color: #FFA500;
+            font-size: 1.8rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        /* Custom arrow positioning */
+        .arrow-1 {
+            /* Input -> Practice */
+            bottom: 37%;
+            right: 35%;
+            transform: rotate(-40deg);
+        }
+
+        .arrow-1::after {
+            content: '↗';
+        }
+
+        .arrow-2 {
+            /* Practice -> Feedback */
+            top: 12%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .arrow-2::after {
+            content: '←';
+        }
+
+        .arrow-3 {
+            /* Feedback -> Input */
+            bottom: 37%;
+            left: 35%;
+            transform: rotate(40deg);
+        }
+
+        .arrow-3::after {
+            content: '↘';
+        }
+
+        /* Cycle Flow text */
+        .cycle-flow {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .cycle-wrapper {
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .cycle-step {
+                position: relative;
+                width: 100%;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                transform: none !important;
+            }
+
+            .cycle-center {
+                position: relative;
+                margin: 0 auto 30px;
+                transform: none;
+            }
+
+            .cycle-arrows {
+                display: none;
+            }
+
+            .cycle-step p {
+                padding-left: 0;
+                margin-top: 10px;
+            }
+        }
+
+        /* Events Section */
+        .event-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .event-card {
+            background: white;
+            padding: 40px 35px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            border-top: 4px solid var(--primary-yellow);
+            position: relative;
+        }
+
+        /* Event Icon */
+        .event-icon {
+            position: absolute;
+            top: -30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--accent-orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(255, 140, 0, 0.3);
+        }
+
+        .event-icon svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+
+        .event-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .event-subtitle {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .event-section {
+            margin-bottom: 25px;
+        }
+
+        .event-section h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-orange);
+            margin-bottom: 10px;
+        }
+
+        .event-section p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .event-points {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .event-points li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .event-points li::before {
+            content: '•';
+            position: absolute;
+            left: 8px;
+            color: var(--accent-orange);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .event-benefits {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 45px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .event-benefits h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 35px;
+            color: var(--text-dark);
+        }
+
+        .benefit-list {
+            margin-bottom: 40px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .benefit-number {
+            width: 35px;
+            height: 35px;
+            background: var(--primary-yellow);
+            color: var(--text-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .benefit-content {
+            flex: 1;
+            line-height: 1.6;
+            color: var(--text-light);
+        }
+
+        .benefit-content strong {
+            color: var(--text-dark);
+        }
+
+        .event-testimonial {
+            background: var(--light-yellow);
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid var(--accent-orange);
+        }
+
+        .event-testimonial .testimonial-text {
+            font-style: italic;
+            margin-bottom: 10px;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        .event-testimonial .testimonial-author {
+            font-weight: 700;
+            color: var(--accent-orange);
+            font-size: 0.9rem;
+        }
+
+        /* Results Section */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .result-category {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            border-top: 3px solid var(--accent-orange);
+        }
+
+        .result-category h4 {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .company-list {
+            list-style: none;
+        }
+
+        .company-list li {
+            padding: 5px 0;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-md);
+            border-left: 4px solid var(--accent-orange);
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--accent-orange);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--secondary-yellow) 100%);
+            color: var(--text-dark);
+            padding: 65px 0;
+            text-align: center;
+        }
+
+        .cta-content .section-title {
+            color: var(--text-dark);
+            margin-bottom: 35px;
+        }
+
+        .cta-content .section-title::after {
+            background: var(--accent-orange);
+        }
+
+        .cta-content p {
+            font-size: 1.1rem;
+            margin-bottom: 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        /* Visual Elements */
+        .visual-stat {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .stat-bar {
+            flex: 1;
+            height: 30px;
+            background: var(--light-yellow);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .stat-fill {
+            height: 100%;
+            background: var(--primary-orange);
+            border-radius: 15px;
+        }
+
+        .stat-label {
+            font-weight: 600;
+            min-width: 100px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .visual-stat {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .event-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .event-benefits {
+                padding: 30px 20px;
+            }
+
+            .benefit-item {
+                gap: 15px;
+            }
+
+            .event-icon {
+                position: static;
+                margin: 0 auto 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>学び×実戦 で鍛える、就活トレーニングプログラム<br>
+            <span class="highlight">キャリアスタディ</span></h1>
+            <p class="subtitle">
+                体育会の忙しさでも続けやすいオンライン型プログラム。
+            </p>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <h2 class="section-title">就活の現状と課題</h2>
+            <div class="problem-cards">
+                <div class="problem-card">
+                    <h3>仕事への満足度</h3>
+                    <div class="problem-stat">10人中6人</div>
+                    <p>社会人の多くが「仕事に納得できていない」という現実。</p>
+                </div>
+                <div class="problem-card">
+                    <h3>選考の厳しさ</h3>
+                    <div class="problem-stat">30,000 → 30</div>
+                    <p>ES・GDなど序盤の"足切り選考"で大半が脱落する現実。</p>
+                </div>
+                <div class="problem-card">
+                    <h3>体育会学生の課題</h3>
+                    <div class="problem-stat">時間不足</div>
+                    <p>シーズンや遠征で準備時間が不足しやすい状況。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" style="background-color: var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">キャリアスタディとは</h2>
+            <div class="about-content">
+                <p>
+                    学び（キャリスタアプリ）と実戦（INTERN QUEST／MIND QUEST）を繰り返し実践し、<br>
+                    自己理解と選考力を同時に鍛える就活トレーニング。<br>
+                    自己分析は"書き出し"方式、GD／模擬面接は現役人事が評価。<br>
+                    高評価者には特別ルート招待も用意。
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">📝</div>
+                    <h3>書き出す自己分析</h3>
+                    <p>深掘りができる独自メソッド</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">👥</div>
+                    <h3>企業人事協力</h3>
+                    <p>現役人事によるGD・面接</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📊</div>
+                    <h3>客観評価＋個別コメント</h3>
+                    <p>特別選考ルートの可能性</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cycle Section -->
+    <section class="cycle-section">
+        <div class="container">
+            <h2 class="section-title">プログラムの仕組み</h2>
+            <div class="cycle-container">
+                <div class="cycle-wrapper">
+                    <div class="cycle-center">
+                        <div class="cycle-center-text">
+                            学び×実戦<br>
+                            循環サイクル
+                        </div>
+                    </div>
+                    
+                    <div class="cycle-step">
+                        <div class="step-header">
+                            <div class="step-number">1</div>
+                            <h3>Input｜学び</h3>
+                        </div>
+                        <p>アプリで自己分析ワーク・業界研究</p>
+                    </div>
+                    
+                    <div class="cycle-step">
+                        <div class="step-header">
+                            <div class="step-number">2</div>
+                            <h3>Practice｜実戦</h3>
+                        </div>
+                        <p>企業協力型GD／模擬面接をオンライン体験</p>
+                    </div>
+                    
+                    <div class="cycle-step">
+                        <div class="step-header">
+                            <div class="step-number">3</div>
+                            <h3>Feedback｜振り返り</h3>
+                        </div>
+                        <p>人事評価＋コメントで強みと課題を可視化</p>
+                    </div>
+                    
+                    <div class="cycle-arrows">
+                        <div class="cycle-arrow arrow-1"></div>
+                        <div class="cycle-arrow arrow-2"></div>
+                        <div class="cycle-arrow arrow-3"></div>
+                    </div>
+                </div>
+                
+                <div class="cycle-flow">
+                    <p>"学び → 実戦 → 振り返り"を何度も回すことで、<br>
+                    アウトプットの精度と納得度が着実に向上。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events-section" style="background-color: var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">キャリアスタディの実戦イベント</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 50px;">
+                学びで得た知識を"本番さながら"に試せる2つの場――<strong>INTERN QUEST</strong> と <strong>MIND QUEST</strong> を紹介。
+            </p>
+            
+            <div class="event-cards">
+                <div class="event-card">
+                    <div class="event-icon">
+                        <!-- グループディスカッション アイコン -->
+                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="event-title">INTERN QUEST</h3>
+                    <p class="event-subtitle">企業協力型のグループディスカッション（GD）実践プログラム。</p>
+                    
+                    <div class="event-section">
+                        <h4>リアルなテーマ</h4>
+                        <p>例）「Netflixのユーザーを増やすキャッチコピーを考えてください」（マーケティング系ベンチャー）／「スカルプDネクストの新しいプロモーションを考えてください」（日用品メーカー）</p>
+                    </div>
+                    
+                    <div class="event-section">
+                        <h4>形式</h4>
+                        <p>5名程度のグループに分かれ、15分でディスカッションを行い発表。企業人事がオブザーブし、ロジカルさ・協調性・リーダーシップをチェック。</p>
+                    </div>
+                    
+                    <div class="event-section">
+                        <h4>ポイント</h4>
+                        <ul class="event-points">
+                            <li>多くの人気企業がGDを"足切り選考"に使う現実を考慮し、通過率を上げるための実戦経験を積める</li>
+                            <li>ディスカッション後に口頭フィードバックがあり、自分の強み／改善点をすぐ把握できる</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-icon">
+                        <!-- 面接 アイコン（対話・コミュニケーション） -->
+                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 6h-2v9H6v2c0 .55.45 1 1 1h11l4 4V7c0-.55-.45-1-1-1zm-4 6V3c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1v14l4-4h10c.55 0 1-.45 1-1z"/>
+                        </svg>
+                    </div>
+                    <h3 class="event-title">MIND QUEST</h3>
+                    <p class="event-subtitle">企業人事とのグループ面接を体験し、詳細な評価が得られるプログラム。</p>
+                    
+                    <div class="event-section">
+                        <h4>質問例</h4>
+                        <p>「これまでリーダーを務めた経験を教えてください」「最も挑戦したことと得た学びは？」など、リーダーシップ・挑戦・成長を深掘りする本番想定の質問が中心</p>
+                    </div>
+                    
+                    <div class="event-section">
+                        <h4>形式</h4>
+                        <p>人事１名 対 参加者3名で複数社の面接ブースをローテーション。面接→フィードバック／座談会→ブース移動を繰り返し、短時間で多角的な評価を受け取る。</p>
+                    </div>
+                    
+                    <div class="event-section">
+                        <h4>フィードバック</h4>
+                        <p>企業ごとに「論理性・協調性・積極性」の3観点×5段階でスコア化し、コメント付きレポートを送付。成績上位者には特別選考案内（スカウト）が届く可能性も。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="event-benefits">
+                <h3>参加するメリット</h3>
+                <div class="benefit-list">
+                    <div class="benefit-item">
+                        <span class="benefit-number">1</span>
+                        <div class="benefit-content">
+                            <strong>本番に近い緊張感で"場慣れ"できる</strong>（GD・面接ともに企業人事が同席）
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-number">2</span>
+                        <div class="benefit-content">
+                            <strong>客観的な数値とコメントで課題が明確になる</strong>――改善ポイントがピンポイントで分かる
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-number">3</span>
+                        <div class="benefit-content">
+                            <strong>評価次第でスカウトへ直結</strong>――早期に選考ルートを獲得するチャンス
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-testimonial">
+                    <p class="testimonial-text">
+                        「INTERN QUESTに毎回参加して口下手を克服し、スーパーゼネコンから内定を得た」
+                    </p>
+                    <p class="testimonial-author">立教大学 レスリング部 25卒</p>
+                </div>
+                
+                <p style="text-align: center; margin-top: 30px; font-size: 1.05rem;">
+                    学び→実戦→フィードバックの循環を繰り返し、GDと面接の"山場"を突破する力を獲得。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" style="background-color: var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">特徴・他サービスとの違い</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">✏️</div>
+                    <h3>書き出す自己分析で深掘り</h3>
+                    <p>ただ考えるだけでなく、書き出すことで自己理解を深める</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🏢</div>
+                    <h3>企業人事協力のGD／面接</h3>
+                    <p>実際の採用担当者から直接フィードバックを受けられる</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <h3>客観評価＋個別コメント & 特別選考ルート</h3>
+                    <p>成績優秀者には企業への特別推薦の機会も</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section">
+        <div class="container">
+            <h2 class="section-title">内定先実績一覧（業界別）</h2>
+            <div class="results-grid">
+                <div class="result-category">
+                    <h4>不動産・建設</h4>
+                    <ul class="company-list">
+                        <li>野村不動産</li>
+                        <li>大林組</li>
+                        <li>鹿島建設</li>
+                    </ul>
+                </div>
+                <div class="result-category">
+                    <h4>金融</h4>
+                    <ul class="company-list">
+                        <li>三井住友銀行</li>
+                        <li>三菱UFJ銀行</li>
+                        <li>農林中央金庫</li>
+                        <li>日本政策投資銀行</li>
+                    </ul>
+                </div>
+                <div class="result-category">
+                    <h4>製造・メーカー</h4>
+                    <ul class="company-list">
+                        <li>トヨタ自動車</li>
+                        <li>パナソニック</li>
+                        <li>IBM</li>
+                        <li>キーエンス</li>
+                        <li>アシックス</li>
+                    </ul>
+                </div>
+                <div class="result-category">
+                    <h4>食品・飲料</h4>
+                    <ul class="company-list">
+                        <li>味の素</li>
+                        <li>サントリー</li>
+                        <li>キリン</li>
+                    </ul>
+                </div>
+                <div class="result-category">
+                    <h4>コンサル・IT</h4>
+                    <ul class="company-list">
+                        <li>アクセンチュア</li>
+                        <li>デロイト トーマツ</li>
+                        <li>VISONAL</li>
+                    </ul>
+                </div>
+                <div class="result-category">
+                    <h4>広告・メディア・その他</h4>
+                    <ul class="company-list">
+                        <li>博報堂</li>
+                        <li>日本経済新聞社</li>
+                        <li>パーソル</li>
+                        <li>マネーフォワード</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" style="background-color: var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">参加者の声</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-content">
+                        「3時間で4回GDを経験できてコスパ抜群。実戦を積めた手応えがあります。」
+                    </p>
+                    <p class="testimonial-author">青山学院大 男子サッカー</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-content">
+                        「自己理解が深まり、GD体験もできた。これから就活に活かせます。」
+                    </p>
+                    <p class="testimonial-author">立教大 体操</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-content">
+                        「実際にやってみてGDの難しさを痛感。経験を積む大切さを実感しました。」
+                    </p>
+                    <p class="testimonial-author">同志社大 ラグビー</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-content">
+                        「個別フィードバックが魅力。自分の成長を強く感じました。」
+                    </p>
+                    <p class="testimonial-author">明治大 ラグビー</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-content">
+                        「社風や人間関係を重視する企業視点に驚き、視野が広がりました。」
+                    </p>
+                    <p class="testimonial-author">中央大 男子サッカー</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-content">
+                        「少人数で濃いFBをもらえ、程よい緊張感でGDに臨めました。」
+                    </p>
+                    <p class="testimonial-author">東北大 男子ラクロス</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="section-title">終わりに</h2>
+                <p>
+                    「なんとなく就活」から一歩先へ。<br>
+                    "早く"から"効率良く"取り組み、後悔のない就職活動を！
+                </p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
