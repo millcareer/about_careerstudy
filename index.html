@@ -168,29 +168,28 @@
             margin-bottom: 10px;
         }
 
-        /* Cycle Section - Triangle Layout */
+        /* Cycle Section - Improved Layout */
         .cycle-container {
-            max-width: 620px;
+            max-width: 800px;
             margin: 0 auto;
             position: relative;
-            padding: 30px 20px 40px;
+            padding: 40px 20px;
         }
 
         .cycle-wrapper {
             position: relative;
             width: 100%;
-            max-width: 580px;
-            height: 380px;
-            margin: 40px auto 0;
+            height: 550px;
+            margin: 40px auto;
         }
 
         .cycle-center {
             position: absolute;
-            top: 50%;
+            top: 40%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 160px;
-            height: 160px;
+            width: 150px;
+            height: 150px;
             background: var(--primary-yellow);
             border-radius: 50%;
             display: flex;
@@ -198,7 +197,7 @@
             justify-content: center;
             text-align: center;
             padding: 25px;
-            box-shadow: 0 6px 20px rgba(255, 193, 7, 0.3);
+            box-shadow: 0 8px 24px rgba(255, 193, 7, 0.3);
             z-index: 10;
         }
 
@@ -211,45 +210,45 @@
 
         .cycle-step {
             position: absolute;
-            width: 200px;
+            width: 220px;
             background: white;
-            padding: 16px 14px;
-            border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             text-align: left;
-            border: 1px solid rgba(255, 193, 7, 0.2);
+            border: 2px solid rgba(255, 193, 7, 0.3);
         }
 
-        /* Position each step in a triangle */
+        /* Position steps in clockwise order starting from top-left */
         .cycle-step:nth-child(2) {
-            /* Input - 下中央 */
-            bottom: 25px;
-            left: 50%;
-            transform: translateX(-50%);
+            /* Step 1: Input - 左上 */
+            top: 20px;
+            left: 0;
         }
 
         .cycle-step:nth-child(3) {
-            /* Practice - 右上 */
-            top: 25px;
-            right: 35px;
+            /* Step 2: Practice - 右上 */
+            top: 20px;
+            right: 0;
         }
 
         .cycle-step:nth-child(4) {
-            /* Feedback - 左上 */
-            top: 25px;
-            left: 35px;
+            /* Step 3: Feedback - 下中央 */
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .step-header {
             display: flex;
             align-items: center;
-            gap: 8px;
-            margin-bottom: 5px;
+            gap: 10px;
+            margin-bottom: 8px;
         }
 
         .step-number {
-            width: 30px;
-            height: 30px;
+            width: 36px;
+            height: 36px;
             background: var(--accent-orange);
             color: white;
             border-radius: 50%;
@@ -257,27 +256,27 @@
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 1.1rem;
             flex-shrink: 0;
         }
 
         .cycle-step h3 {
             color: var(--text-dark);
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: 700;
             margin: 0;
-            line-height: 1.2;
+            line-height: 1.3;
         }
 
         .cycle-step p {
-            font-size: 0.78rem;
+            font-size: 0.85rem;
             color: var(--text-light);
-            line-height: 1.5;
+            line-height: 1.6;
             margin: 0;
-            padding-left: 38px;
+            padding-left: 46px;
         }
 
-        /* Curved arrows */
+        /* Curved arrows for clockwise flow */
         .cycle-arrows {
             position: absolute;
             width: 100%;
@@ -289,50 +288,54 @@
 
         .cycle-arrow {
             position: absolute;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: #FFA500;
-            font-size: 1.8rem;
-            opacity: 0.85;
-            font-weight: 300;
+            font-size: 2rem;
+            opacity: 0.7;
         }
 
-        /* Custom arrow positioning */
+        /* Arrow positions for clockwise flow */
         .arrow-1 {
-            /* Input -> Practice */
-            bottom: 37%;
-            right: 35%;
-            transform: rotate(-40deg);
-        }
-
-        .arrow-1::after {
-            content: '↗';
-        }
-
-        .arrow-2 {
-            /* Practice -> Feedback */
-            top: 12%;
+            /* Input -> Practice (左上から右上へ) */
+            top: 40px;
             left: 50%;
             transform: translateX(-50%);
         }
 
+        .arrow-1::after {
+            content: '→';
+        }
+
+        .arrow-2 {
+            /* Practice -> Feedback (右上から下中央へ) */
+            right: 25%;
+            top: 50%;
+            transform: translateY(-50%) rotate(135deg);
+        }
+
         .arrow-2::after {
-            content: '←';
+            content: '→';
         }
 
         .arrow-3 {
-            /* Feedback -> Input */
-            bottom: 37%;
-            left: 35%;
-            transform: rotate(40deg);
+            /* Feedback -> Input (下中央から左上へ) */
+            left: 25%;
+            top: 50%;
+            transform: translateY(-50%) rotate(-135deg);
         }
 
         .arrow-3::after {
-            content: '↘';
+            content: '→';
         }
 
         /* Cycle Flow text */
         .cycle-flow {
             text-align: center;
-            margin-top: 30px;
+            margin-top: 40px;
             font-size: 1rem;
             color: var(--text-light);
             max-width: 600px;
@@ -373,6 +376,10 @@
             .cycle-step p {
                 padding-left: 0;
                 margin-top: 10px;
+            }
+
+            .cycle-step:hover {
+                transform: none;
             }
         }
 
