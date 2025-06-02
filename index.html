@@ -206,6 +206,7 @@
             font-weight: 700;
             font-size: 1rem;
             line-height: 1.4;
+            margin: 0;
         }
 
         .cycle-step {
@@ -608,6 +609,252 @@
             color: var(--accent-orange);
         }
 
+        /* Rules Section */
+        .rules-section {
+            background-color: var(--bg-white);
+            padding: 65px 0;
+        }
+
+        .rules-intro {
+            max-width: 800px;
+            margin: 0 auto 50px;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .rules-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .rule-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            border-top: 4px solid var(--primary-yellow);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rule-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent-orange);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .rule-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            padding-right: 60px;
+            text-align: left;
+        }
+
+        .rule-highlight {
+            background: var(--light-yellow);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            color: var(--accent-orange);
+        }
+
+        .rule-content {
+            color: var(--text-light);
+            line-height: 1.8;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .rule-emphasis {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 3px solid var(--accent-orange);
+        }
+
+        .rule-emphasis p {
+            margin: 0;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        /* Priority Matrix */
+        .priority-matrix {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .matrix-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--text-dark);
+        }
+
+        .matrix-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: 100px 1fr 1fr;
+            grid-template-rows: 100px 1fr 1fr;
+            gap: 0;
+            border: 2px solid var(--light-orange);
+            border-radius: 8px;
+            overflow: hidden;
+            min-height: 400px;
+        }
+
+        .matrix-cell {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            position: relative;
+        }
+
+        .matrix-corner {
+            background: var(--bg-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .matrix-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .matrix-label-urgency {
+            background: #E74C3C;
+            color: white;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+
+        .matrix-label-importance {
+            background: #3498DB;
+            color: white;
+        }
+
+        .matrix-label-low {
+            background: #95A5A6;
+            color: white;
+        }
+
+        .matrix-quadrant {
+            position: relative;
+        }
+
+        .quadrant-1 {
+            background: #FFEBEE;
+            border-left: 2px solid var(--light-orange);
+            border-bottom: 2px solid var(--light-orange);
+        }
+
+        .quadrant-2 {
+            background: #FFF8E1;
+            border-bottom: 2px solid var(--light-orange);
+        }
+
+        .quadrant-3 {
+            background: #F5F5F5;
+            border-left: 2px solid var(--light-orange);
+        }
+
+        .quadrant-4 {
+            background: #ECEFF1;
+        }
+
+        .quadrant-header {
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .quadrant-label {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.1);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .quadrant-items {
+            list-style: none;
+            padding: 0;
+        }
+
+        .quadrant-items li {
+            padding: 5px 0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        .quadrant-items li::before {
+            content: '• ';
+            color: var(--accent-orange);
+            font-weight: 700;
+        }
+
+        .quadrant-highlight {
+            margin-top: 15px;
+            padding: 10px;
+            background: rgba(255, 193, 7, 0.2);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .matrix-note {
+            margin-top: 30px;
+            text-align: center;
+            padding: 20px;
+            background: var(--light-yellow);
+            border-radius: 8px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .matrix-note strong {
+            color: var(--accent-orange);
+        }
+
         /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--secondary-yellow) 100%);
@@ -666,15 +913,44 @@
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+                padding: 0 10px;
             }
 
             .section-title {
                 font-size: 1.5rem;
+                margin-bottom: 30px;
             }
 
+            section {
+                padding: 50px 0;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            /* Problem Cards */
+            .problem-cards {
+                gap: 20px;
+            }
+
+            .problem-card {
+                padding: 25px 20px;
+            }
+
+            /* Testimonials */
             .testimonials-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .testimonial-card {
+                padding: 25px 20px;
             }
 
             .visual-stat {
@@ -682,8 +958,14 @@
                 align-items: flex-start;
             }
 
+            /* Events */
             .event-cards {
                 grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .event-card {
+                padding: 30px 20px;
             }
 
             .event-benefits {
@@ -697,6 +979,367 @@
             .event-icon {
                 position: static;
                 margin: 0 auto 20px;
+            }
+
+            /* Rules Section */
+            .rules-intro {
+                margin-bottom: 30px;
+                padding: 0 10px;
+            }
+
+            .rules-intro p {
+                font-size: 1rem;
+            }
+
+            .rules-cards {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .rule-card {
+                padding: 30px 20px;
+            }
+
+            .rule-card h3 {
+                font-size: 1.2rem;
+                padding-right: 50px;
+            }
+
+            .rule-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+                top: 15px;
+                right: 15px;
+            }
+
+            .rule-content {
+                font-size: 0.95rem;
+            }
+
+            .rule-emphasis {
+                padding: 15px;
+                margin-top: 15px;
+            }
+
+            .rule-emphasis p {
+                font-size: 0.9rem;
+            }
+
+            /* Priority Matrix - Major Changes for Mobile */
+            .priority-matrix {
+                padding: 25px 15px;
+            }
+
+            .matrix-title {
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+            }
+
+            .matrix-subtitle {
+                font-size: 0.9rem;
+                margin-bottom: 25px;
+            }
+
+            /* Stack the matrix on mobile */
+            .matrix-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                border: none;
+                min-height: auto;
+            }
+
+            .matrix-cell {
+                padding: 20px;
+                border-radius: 8px;
+                min-height: auto;
+            }
+
+            .matrix-corner {
+                display: none;
+            }
+
+            .matrix-label {
+                display: none;
+            }
+
+            .matrix-quadrant {
+                border: 2px solid var(--light-orange) !important;
+            }
+
+            .quadrant-label {
+                position: static;
+                display: inline-block;
+                margin-bottom: 10px;
+                font-size: 0.85rem;
+            }
+
+            .quadrant-header {
+                font-size: 1rem;
+                margin-bottom: 15px;
+            }
+
+            .quadrant-items {
+                margin-bottom: 15px;
+            }
+
+            .quadrant-items li {
+                font-size: 0.9rem;
+                padding: 3px 0;
+            }
+
+            .quadrant-highlight {
+                margin-top: 15px;
+                padding: 10px;
+                font-size: 0.85rem;
+            }
+
+            .matrix-note {
+                margin-top: 25px;
+                padding: 20px 15px;
+                font-size: 0.9rem;
+            }
+
+            /* Features */
+            .features-grid {
+                gap: 20px;
+            }
+
+            .feature-item {
+                padding: 25px 20px;
+            }
+
+            .feature-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+
+            /* Results */
+            .results-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .result-category {
+                padding: 20px;
+            }
+
+            /* Cycle Section - Complete Redesign for Mobile */
+            .cycle-section {
+                padding: 50px 0;
+            }
+
+            .cycle-container {
+                padding: 20px 10px;
+            }
+
+            .cycle-wrapper {
+                height: auto;
+                display: block;
+                margin: 20px auto;
+            }
+
+            .cycle-center {
+                position: relative;
+                top: auto;
+                left: auto;
+                width: 100%;
+                max-width: 250px;
+                height: auto;
+                padding: 30px 25px;
+                margin: 0 auto 30px;
+                transform: none;
+                background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--secondary-yellow) 100%);
+                border-radius: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                min-height: 100px;
+                box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+                border: 3px solid rgba(255, 255, 255, 0.5);
+            }
+
+            .cycle-center-text {
+                font-size: 1.1rem;
+                font-weight: 700;
+                color: #333;
+                line-height: 1.4;
+                margin: 0;
+                white-space: normal;
+                word-wrap: break-word;
+            }
+
+            /* Mobile cycle steps with connecting lines */
+            .cycle-step {
+                position: relative;
+                width: 100%;
+                padding: 25px 20px;
+                margin-bottom: 25px;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                transform: none !important;
+                border: 3px solid var(--primary-yellow);
+                background: white;
+            }
+
+            /* Add connecting arrow between steps */
+            .cycle-step:not(:last-child)::after {
+                content: '↓';
+                position: absolute;
+                bottom: -35px;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 1.8rem;
+                color: var(--accent-orange);
+                font-weight: 700;
+                z-index: 1;
+            }
+
+            /* Add curved arrow from last step back to first */
+            .cycle-step:last-child {
+                margin-bottom: 50px;
+                position: relative;
+            }
+
+            .cycle-step:last-child::after {
+                content: '↺';
+                position: absolute;
+                bottom: -45px;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 2.5rem;
+                color: var(--accent-orange);
+                font-weight: 700;
+            }
+
+            .step-header {
+                gap: 15px;
+                margin-bottom: 12px;
+            }
+
+            .step-number {
+                width: 35px;
+                height: 35px;
+                font-size: 1.1rem;
+            }
+
+            .cycle-step h3 {
+                font-size: 1.1rem;
+                font-weight: 700;
+            }
+
+            .cycle-step p {
+                padding-left: 0;
+                margin-top: 10px;
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+
+            .cycle-arrows {
+                display: none;
+            }
+
+            .cycle-flow {
+                margin-top: 20px;
+                padding: 20px;
+                background: var(--bg-light);
+                border-radius: 10px;
+            }
+
+            .cycle-flow p {
+                font-size: 0.95rem;
+                line-height: 1.7;
+                margin: 0;
+            }
+
+            /* About */
+            .about-content {
+                margin-bottom: 30px;
+            }
+
+            .about-content p {
+                font-size: 1rem;
+            }
+
+            /* CTA */
+            .cta-section {
+                padding: 50px 0;
+            }
+
+            .cta-content p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Tablet devices */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .cycle-center {
+                max-width: 300px;
+                padding: 35px 30px;
+            }
+
+            .cycle-center-text {
+                font-size: 1.2rem;
+            }
+
+            .cycle-step {
+                padding: 30px 25px;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 375px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .rule-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .matrix-title {
+                font-size: 1.1rem;
+            }
+
+            .quadrant-header {
+                font-size: 0.95rem;
+            }
+
+            .quadrant-items li {
+                font-size: 0.85rem;
+            }
+
+            /* Cycle adjustments for extra small screens */
+            .cycle-center {
+                padding: 25px 20px;
+                max-width: 220px;
+                min-height: 90px;
+            }
+
+            .cycle-center-text {
+                font-size: 0.95rem;
+                line-height: 1.3;
+            }
+
+            .cycle-step {
+                padding: 20px 15px;
+            }
+
+            .cycle-step h3 {
+                font-size: 1rem;
+            }
+
+            .cycle-step p {
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -1048,6 +1691,123 @@
                         「少人数で濃いFBをもらえ、程よい緊張感でGDに臨めました。」
                     </p>
                     <p class="testimonial-author">東北大 男子ラクロス</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rules Section -->
+    <section class="rules-section">
+        <div class="container">
+            <h2 class="section-title">キャリアスタディのルール</h2>
+            <div class="rules-intro">
+                <p>
+                    就活を成功させるために、そして将来のキャリアで後悔しないために。<br>
+                    キャリアスタディでは、参加者全員に守っていただきたい<span class="rule-highlight">3つのルール</span>があります。
+                </p>
+            </div>
+
+            <div class="rules-cards">
+                <div class="rule-card">
+                    <div class="rule-number">1</div>
+                    <h3>全力で取り組もう</h3>
+                    <div class="rule-content">
+                        <p>就活は人生において<span class="rule-highlight">コスパの良い、自分への投資</span>。<br>
+                        この半年〜1年間頑張れば、40年間の年収や、やりがいが変わる。</p>
+                    </div>
+                    <div class="rule-emphasis">
+                        <p>高い優先順位で取り組もう！</p>
+                    </div>
+                </div>
+
+                <div class="rule-card">
+                    <div class="rule-number">2</div>
+                    <h3>突発的な予定でのキャンセルはやめよう！</h3>
+                    <div class="rule-content">
+                        <p>目先の短期的なメリットより、人生に関わる大きなメリットで考えよう。</p>
+                    </div>
+                </div>
+
+                <div class="rule-card">
+                    <div class="rule-number">3</div>
+                    <h3>Q. 第2領域と第3領域、どっちが大事？</h3>
+                    <div class="rule-content">
+                        <p><strong>第3領域</strong>：対応を迫られるが効果が低い<br>
+                        • 急速代わりに入るバイト<br>
+                        • 当日の研究室、ゼミからの依頼</p>
+                        <p style="margin-top: 15px;"><strong>第2領域</strong>：効果はあるが期限はない<br>
+                        • 部活の練習<br>
+                        • 就活の対策(自己分析)<br>
+                        • 受験、テスト勉強</p>
+                    </div>
+                    <div class="rule-emphasis">
+                        <p>→頑張れた人だけが大きなメリットを長期的に手に入れられる。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="priority-matrix">
+                <h3 class="matrix-title">優先順位の付け方</h3>
+                <p class="matrix-subtitle">〜緊急度・重要度のマトリクス〜</p>
+                
+                <div class="matrix-grid">
+                    <div class="matrix-cell matrix-corner"></div>
+                    <div class="matrix-cell matrix-label matrix-label-urgency">緊急度　高</div>
+                    <div class="matrix-cell matrix-label matrix-label-urgency">緊急度　低</div>
+                    
+                    <div class="matrix-cell matrix-label matrix-label-importance">重要度　高</div>
+                    <div class="matrix-cell matrix-quadrant quadrant-1">
+                        <span class="quadrant-label">第1領域</span>
+                        <h4 class="quadrant-header">期限も効果もある</h4>
+                        <ul class="quadrant-items">
+                            <li>部活の試合</li>
+                            <li>企業の面接</li>
+                            <li>受験、期末テスト</li>
+                        </ul>
+                    </div>
+                    <div class="matrix-cell matrix-quadrant quadrant-2">
+                        <span class="quadrant-label">第2領域</span>
+                        <h4 class="quadrant-header">効果はあるが期限はない</h4>
+                        <ul class="quadrant-items">
+                            <li>部活の練習</li>
+                            <li>就活の対策(自己分析)</li>
+                            <li>受験、テスト勉強</li>
+                        </ul>
+                        <div class="quadrant-highlight">
+                            すぐ効果が見えづらい。そのためモチベーションを保ちづらい。
+                        </div>
+                    </div>
+                    
+                    <div class="matrix-cell matrix-label matrix-label-low">重要度　低</div>
+                    <div class="matrix-cell matrix-quadrant quadrant-3">
+                        <span class="quadrant-label">第3領域</span>
+                        <h4 class="quadrant-header">対応を迫られるが効果が低い</h4>
+                        <ul class="quadrant-items">
+                            <li>急速代わりに入るバイト</li>
+                            <li>当日の研究室、ゼミからの依頼</li>
+                        </ul>
+                        <div class="quadrant-highlight">
+                            良いやつだと思われる。<br>
+                            短期的なメリット（時給）がある。
+                        </div>
+                    </div>
+                    <div class="matrix-cell matrix-quadrant quadrant-4">
+                        <span class="quadrant-label">第4領域</span>
+                        <h4 class="quadrant-header">必要のない無駄な時間</h4>
+                        <ul class="quadrant-items">
+                            <li>テレビを見る</li>
+                            <li>ゲームをする</li>
+                            <li>漫画を見る</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="matrix-note">
+                    <p>→"明日"でも出来る予定<br>
+                    "自分"がやらなくてもいい予定<br>
+                    の場合がほとんど…</p>
+                    <p style="margin-top: 10px;"><strong>第2領域を最優先に！頑張れた人だけが<br>
+                    大きなメリットを長期的に手に入れられる。</strong></p>
                 </div>
             </div>
         </div>
