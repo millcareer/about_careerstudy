@@ -726,7 +726,7 @@
             grid-template-columns: 100px 1fr 1fr;
             grid-template-rows: 100px 1fr 1fr;
             gap: 0;
-            border: 2px solid var(--light-orange);
+            border: 3px solid var(--primary-yellow);
             border-radius: 8px;
             overflow: hidden;
             min-height: 400px;
@@ -756,20 +756,20 @@
         }
 
         .matrix-label-urgency {
-            background: #E74C3C;
+            background: var(--accent-orange);
             color: white;
             writing-mode: vertical-rl;
             text-orientation: mixed;
         }
 
         .matrix-label-importance {
-            background: #3498DB;
-            color: white;
+            background: var(--primary-yellow);
+            color: var(--text-dark);
         }
 
         .matrix-label-low {
-            background: #95A5A6;
-            color: white;
+            background: var(--light-orange);
+            color: var(--text-dark);
         }
 
         .matrix-quadrant {
@@ -777,23 +777,24 @@
         }
 
         .quadrant-1 {
-            background: #FFEBEE;
-            border-left: 2px solid var(--light-orange);
-            border-bottom: 2px solid var(--light-orange);
+            background: #FFF8E1;
+            border-left: 2px solid var(--primary-yellow);
+            border-bottom: 2px solid var(--primary-yellow);
         }
 
         .quadrant-2 {
-            background: #FFF8E1;
-            border-bottom: 2px solid var(--light-orange);
+            background: #FFFEF7;
+            border-bottom: 2px solid var(--primary-yellow);
+            border-left: 3px solid var(--accent-orange);
         }
 
         .quadrant-3 {
-            background: #F5F5F5;
-            border-left: 2px solid var(--light-orange);
+            background: #FFF5E5;
+            border-left: 2px solid var(--primary-yellow);
         }
 
         .quadrant-4 {
-            background: #ECEFF1;
+            background: #FAFAFA;
         }
 
         .quadrant-header {
@@ -807,7 +808,8 @@
             position: absolute;
             top: 10px;
             right: 10px;
-            background: rgba(0, 0, 0, 0.1);
+            background: var(--primary-yellow);
+            color: var(--text-dark);
             padding: 5px 10px;
             border-radius: 15px;
             font-size: 0.8rem;
@@ -835,10 +837,11 @@
         .quadrant-highlight {
             margin-top: 15px;
             padding: 10px;
-            background: rgba(255, 193, 7, 0.2);
+            background: var(--light-yellow);
             border-radius: 6px;
             font-size: 0.85rem;
             line-height: 1.5;
+            border-left: 3px solid var(--accent-orange);
         }
 
         .matrix-note {
@@ -1065,7 +1068,25 @@
             }
 
             .matrix-quadrant {
-                border: 2px solid var(--light-orange) !important;
+                border: 2px solid var(--primary-yellow) !important;
+                background: white;
+            }
+
+            .quadrant-1 {
+                background: var(--light-yellow);
+            }
+
+            .quadrant-2 {
+                background: var(--bg-light);
+                border-left: 3px solid var(--accent-orange) !important;
+            }
+
+            .quadrant-3 {
+                background: #FFF5E5;
+            }
+
+            .quadrant-4 {
+                background: #FAFAFA;
             }
 
             .quadrant-label {
@@ -1368,7 +1389,7 @@
                 </div>
                 <div class="problem-card">
                     <h3>選考の厳しさ</h3>
-                    <div class="problem-stat">30,000名エントリー → 30名内定</div>
+                    <div class="problem-stat">30,000名エントリー<br>→ 30名内定</div>
                     <p>ES・GDなど序盤の"足切り選考"で大半が脱落する現実。</p>
                 </div>
                 <div class="problem-card">
